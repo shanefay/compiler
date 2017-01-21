@@ -1,0 +1,66 @@
+// program to read integer values n (n > 0) from the console
+// and, for each one, print the sum of the values from 1 to n
+
+program Test {
+
+   int i;
+   int k;
+   int[4] testArray := [1, 2, 3, 4];
+   int testArrayRead := testArray[1];
+   constant bool[2] testArray2 := [true, false];
+   //int testConditional := <true!=false> ? 5:15;
+   
+
+   void SumUp() {
+      int j, sum;
+      
+      void Subtract() {
+         i := i - 1;
+      }
+      
+      void Add() {
+         if i > 0 {
+            sum := sum + i; 
+            Subtract();
+            Add();
+         }
+      }
+      
+      j := i;
+      sum := 0;
+      Add();
+      write "The sum of the values from 1 to ";
+      write j; write " is ";
+      writeln sum;
+   }
+
+   void TestFunction(int x, int y){
+      int k;
+      k := x + y;
+   }
+
+   void main() {
+      write "Enter value for i (or 0 to stop): ";
+      read i;
+      while i > 0 {
+         SumUp();
+         write "Enter value for i (or 0 to stop): ";
+         read i;
+      }
+      k := 0;
+
+      testArray[0] := 5;
+      for (k:=0; k <4; k:=k+1;)
+         do{
+            testArray[2] := k+5;
+         }
+
+      switch (k){
+         case 0:
+            i := 1;
+            break;
+         case 1:
+            i := 2;   
+      }   
+   }
+}
